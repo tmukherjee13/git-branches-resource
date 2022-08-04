@@ -15,14 +15,14 @@ RUN apk add --no-cache \
     --virtual build-dependencies \
     make \
     g++ \
-    openssl-dev && \
-  git clone https://github.com/proxytunnel/proxytunnel.git && \
-  cd proxytunnel && \
-  make -j4 && \
-  install -c proxytunnel /usr/bin/proxytunnel && \
-  cd .. && \
-  rm -rf proxytunnel && \
-  apk del build-dependencies
+    openssl-dev
+  # git clone https://github.com/proxytunnel/proxytunnel.git && \
+  # cd proxytunnel && \
+  # make -j4 && \
+  # install -c proxytunnel /usr/bin/proxytunnel && \
+  # cd .. && \
+  # rm -rf proxytunnel && \
+  # apk del build-dependencies
 
 RUN git config --global user.email "git@localhost"
 RUN git config --global user.name "git"
